@@ -1,0 +1,192 @@
+#appForm.expanded
+  %form
+  
+    #personalInformationSection
+      .appSectionTitle
+        %h2 About You
+        
+      #personalInformationContainer
+        %fieldset
+        
+          #nameContainer.row
+            #FirstNameContainer.appSectionRow.row
+              .col.span_half
+                .row
+                  .col.span_5
+                    %label{for:"FirstName"}
+                      First name
+                    %input#FirstName
+                  .col.span_4
+                    %label{for:"MiddleInitial"}
+                      Initial
+                    %input#MiddleInitial
+              .col.span_half
+                %label{for:"LastName"}
+                  Last name
+                %input#LastName
+                
+        %fieldset
+          #DOBContainer.appSection
+            .row
+              .col.span_half
+                Date of Birth
+                .row
+                  .col.span_3
+                    %label{for:"DOBDay"} Day
+                    %input#DOBDay
+                  .col.span_3
+                    %label{for:"DOBMonth"} Month
+                    %select#DOBMonth.month{"aria-describedby" => "DOBMonthError", "aria-invalid" => "false", "aria-required" => "true", name: "DOBMonth"}
+                      %option{value: ""} Select
+                      %option{value: "1"} January
+                      %option{value: "2"} February
+                      %option{value: "3"} March
+                      %option{value: "4"} April
+                      %option{value: "5"} May
+                      %option{value: "6"} June
+                      %option{value: "7"} July
+                      %option{value: "8"} August
+                      %option{value: "9"} September
+                      %option{value: "10"} October
+                      %option{value: "11"} November
+                      %option{value: "12"} December 
+                  .col.span_3
+                    %label{for:"DOBYear"} Year
+                    %input#DOBDay
+                    
+              .col.span_half
+                %label{for:"PreferedLang"}
+                  Prefered Language
+                %select#PreferedLang{"aria-describedby" => "PreferedLangError", "aria-invalid" => "false", "aria-required" => "true", name: "PreferedLang"}
+                  %option{value: ""} Select
+                  %option{value: "English"} English
+                  %option{value: "French"} French
+
+        .row
+          %button.primaryButton Continue
+
+    #investmentInformationSection                    
+      .appSectionTitle
+        %h2 Investment Information
+      #investmentInformationContainer
+        %fieldset
+          #ExistingGICContainer.row
+            .col.span_half
+              .row
+                .col.span_9
+                  Do you want to open a new GIC account or invest in an existing GIC account?
+                .col.span_half
+                  %input#ExistingGICNew.ERR_Existing{"aria-describedby" => "ExistingGICNewError", "aria-invalid" => "false", "aria-required" => "true", name: "ExistingGIC", type: "radio", value: "New"}/
+                  %label{for: "ExistingGICNew"} New
+              
+                .col.span_half   
+                  %input#ExistingGICExisting.ERR_Existing{"aria-describedby" => "ExistingGICNewError", "aria-invalid" => "false", "aria-required" => "true", name: "ExistingGIC", type: "radio", value: "New"}/
+                  %label{for: "ExistingGICExisting"} Existing
+        
+        %fieldset
+          .row
+            #TermDetailsContainer.col.span_half
+              %label{for: "TermDetails"} Term
+              %select#TermDetails.inputField.fullWidth{"aria-describedby" => "TermDetailsError", "aria-invalid" => "false", "aria-required" => "true"}
+                %option{value: ""} Select
+                %option.gic-bonus-rate{value: "30 Days"} 30 Days
+                %option.gic-bonus-rate{value: "90 Days"} 90 Days
+                %option.gic-bonus-rate{value: "180 Days"} 180 Days
+                %option.gic-bonus-rate{value: "270 Days"} 270 Days
+                %option.gic-bonus-rate{value: "12 Months"} 12 Months
+                %option.gic-bonus-rate{value: "14 Months"} 14 Months
+                %option.gic-bonus-rate{value: "17 Months"} 17 Months
+                %option.gic-bonus-rate{value: "18 Months"} 18 Months
+                %option.gic-bonus-rate{value: "24 Months"} 24 Months
+                %option.gic-bonus-rate{value: "25 Months"} 25 Months
+                %option.gic-bonus-rate{value: "30 Months"} 30 Months
+                %option.gic-bonus-rate{value: "36 Months"} 36 Months
+                %option.gic-bonus-rate{value: "48 Months"} 48 Months
+                %option.gic-bonus-rate{value: "60 Months"} 60 Months
+            #IPFContainer.col.span_half
+              %label{for: "IPF"} Interest Payment Frequency
+              %select#IPF.inputField.fullWidth{"aria-describedby" => "IPFError", "aria-invalid" => "false", "aria-required" => "true"}
+                %option{value: ""} Select
+                
+          .row
+            .col.span_9
+              %table#ratesBBST_BBLT.investment-rates-table
+                %thead
+                  %tr
+                    %th.layoutHeader Term/Balance
+                    %th.layoutHeader $1,000 - $4,999
+                    %th.layoutHeader $5,000 - $999,999
+                %tbody
+                  %tr.tabularData2
+                    %td 30 Days
+                    %td.data -
+                    %td.data 0.550
+                  %tr.tabularData1
+                    %td 90 Days
+                    %td.data 0.750
+                    %td.data 0.750
+                  %tr.tabularData2
+                    %td 180 Days
+                    %td.data 0.800
+                    %td.data 0.800
+                  %tr.tabularData1
+                    %td 270 Days
+                    %td.data 0.850
+                    %td.data 0.850
+                  %tr.tabularData2
+                    %td 12 Months
+                    %td.data 1.150
+                    %td.data 1.150
+                  %tr.tabularData1
+                    %td 14 Months
+                    %td.data 0.950
+                    %td.data 0.950
+                  %tr.tabularData2
+                    %td 17 Months
+                    %td.data 0.950
+                    %td.data 0.950
+                  %tr.tabularData1
+                    %td 18 Months
+                    %td.data 1.200
+                    %td.data 1.200
+                  %tr.tabularData2
+                    %td 24 Months
+                    %td.data 1.400
+                    %td.data 1.400
+                  %tr.bonusRow
+                    %td
+                      25 Months
+                      #bestOfferTag
+                        Best Offer
+                    %td.data 1.200
+                    %td.data 1.200
+                  %tr.tabularData2
+                    %td 30 Months
+                    %td.data 1.150
+                    %td.data 1.150
+                  %tr.tabularData1
+                    %td 36 Months
+                    %td.data 1.750
+                    %td.data 1.750
+                  %tr.tabularData2
+                    %td 48 Months
+                    %td.data 2.100
+                    %td.data 2.100
+                  %tr.tabularData1
+                    %td 60 Months
+                    %td.data 2.300
+                    %td.data 2.300
+        
+        
+= content_for :rightrail do
+
+  %h1 Right Rail
+  
+  %p Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people. Like pit bulls. The dog of dogs. Pit bull can be the right man's best friend... or the wrong man's worst enemy. You going to give me a dog for a pet, give me a pit bull. Give me... Raoul. Right, Omar? Give me Raoul.
+  %h3 Oh... what I'm gon' do?
+  %p Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.
+  %h3 I took lessons
+  %p Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+  %h3 We happy?
+  %p Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people. Like pit bulls. The dog of dogs. Pit bull can be the right man's best friend... or the wrong man's worst enemy. You going to give me a dog for a pet, give me a pit bull. Give me... Raoul. Right, Omar? Give me Raoul.
+    

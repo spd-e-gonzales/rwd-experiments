@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title RWD experiments
+    = stylesheet_link_tag  "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  %body
+
+    #mainBody
+      #innerMainContent
+        %a#skiptomain{:name=>"skiptomain"}
+      
+        .row
+          #mainContent
+            = yield
+            
+          #rightNav
+            = yield :rightrail           

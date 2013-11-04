@@ -1,0 +1,36 @@
+@import 'gridpak/gridpak'
+
+$maxwidth: 960px
+
+#mainBody
+  max-width: $maxwidth
+  margin: 0 auto
+  position: relative
+  
+  #innerMainContent
+    :position absolute
+    
+
+#mainContent, #rightNav
+  @extend .col
+
+@media screen and (min-width: 760px) 
+  #mainContent
+    @extend .span_8
+
+  #rightNav
+    @extend .span_4  
+    
+@media screen and (min-width: 480px) and (max-width: 759px)
+  #mainContent
+    @extend .span_6
+
+  #rightNav
+    @extend .span_3     
+    
+@media screen and (min-width: 320px) and (max-width: 479px)
+  #mainContent
+    @extend .span_3
+
+  #rightNav
+    @extend .span_1      
