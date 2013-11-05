@@ -1,9 +1,38 @@
-$font-stack: helvetica, arial, verdana, sans-serif
-$font-base-size: .8em
-$line-height: 1.5em
+@import 'margins_and_padding', 'colors', 'mixins'
 
+$font-stack-arial: helvetica, arial, verdana, sans-serif
+$font-stack-serif: georgia, times, serif
+$font-base-size: 1em
+$standard-line-height: 1.6em
+    
 body
+  color: $body-text-color
   font:
-    family: $font-stack
+    family: $font-stack-arial
     size: $font-base-size
-  line-height: $line-height  
+  line-height: $standard-line-height  
+    
+h1
+  @include text-formatting(2em, 1.5em, $primary-text-color)
+  a
+    color: $primary-text-color
+  
+h2
+  @include text-formatting(1.75em, null, $secondary-text-color) 
+  
+h3
+  @include text-formatting(1.5em, null, $primary-text-color)     
+  
+.legal
+  p
+    @include text-formatting(.7em, 1.3em, $legal-text-color, $font-stack-serif)
+    
+#rightNav
+  p
+    @include text-formatting($fontsize: $font-base-size - .5)
+
+  .legal
+    p
+      @extend h1
+      @include text-formatting($fontsize: $font-base-size/.5, $text-color: $secondary-text-color)
+    
